@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="testApp">
+<head>
+    <title>Angular project</title>
+</head>
+<body>
+   
+    <div ng-controller="myCtr">
+        
+        <ul ng-repeat="x in users">
+            <li> {{x.login}}</li>
+            <li> {{x.id}}</li>
+            <li><img src = "{{x.avatar_url}}" /></li>
+        </ul>
+    
+    </div>
+
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
+    <script src="./app.js"></script>
+</body>
+</html>
