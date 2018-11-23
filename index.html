@@ -8,9 +8,10 @@
     <div ng-controller="myCtr">
         
         <ul ng-repeat="x in users">
-            <li> {{x.login}}</li>
+            <li> {{x.name}}</li>
             <li> {{x.id}}</li>
-            <li><img src = "{{x.avatar_url}}" /></li>
+            <li><img src = "{{x.photo}}" /></li>
+            <li>{{x.runs}}</li>
         </ul>
     
     </div>
