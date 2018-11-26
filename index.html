@@ -1,22 +1,61 @@
 <!DOCTYPE html>
-<html ng-app="testApp">
+<html lang="en" ng-app="myApp">
 <head>
-    <title>Angular project</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <body>
-   
-    <div ng-controller="myCtr">
-        
-        <ul ng-repeat="x in users">
-            <li> {{x.name}}</li>
-            <li> {{x.id}}</li>
-            <li><img src = "{{x.photo}}" /></li>
-            <li>{{x.runs}}</li>
-        </ul>
-    
+    <div class="container">
+        <div ng-controller="myCtr">
+            <table class="table table-bordered">
+                <tr>
+                    <th>name</th>
+                    <th>age</th>
+                    <th>company</th>
+                    <th>remove</th>
+                </tr>
+                <tr ng-repeat="user in users">
+                   <td> {{user.name}}</td>
+                   <td> {{user.age}}</td>
+                   <td> {{user.company}}</td>
+                   <td class="btn btn-danger btn-xs" ng-click="remove(user)">remove</td>
+                </tr>
+            </table>
+
+            <!-- this is adding new elements -->
+
+           <h1> {{newUser.name}}</h1>
+           <h1> {{newUser.age}}</h1>
+           <h1> {{newUser.company}}</h1>
+            <form action="#" ng-submit="addusers()">
+                <div class="form-group">
+                    <input type="text" placeholder="name"
+                     class="form-control" ng-model="newUser.name" />
+                </div>
+
+                <div class="form-group">
+                        <input type="text" placeholder="age"
+                         class="form-control" ng-model="newUser.age" />
+                </div>
+
+                 <div class="form-group">
+                    <input type="text"
+                     class="form-control"
+                     placeholder="company"
+                     ng-model="newUser.company" />
+                </div>
+                <input type="submit" value="submit" class="btn btn-success">
+            </form>
+
+        </div>
+
+
     </div>
 
-    
+   
     
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
     <script src="./app.js"></script>
